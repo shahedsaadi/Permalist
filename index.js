@@ -7,17 +7,25 @@ const app = express();
 const port = 3000;
 
 dotenv.config();
-const passSecrete = process.env.DB_PASS;
 
-const db = new pg.Client({
-  user: "postgres",
-  host: "localhost",
-  database: "permalist",
-  password: passSecrete,
-  port: 5432,
-});
-db.connect();
+const dbConfig = {
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASS,
+  port: process.env.DB_PORT,
+};
 
+const db = new pg.Client(dbConfig);
+
+db.connect()
+  .then(() => {
+    console.log('Connected to PostgreSQL database');
+  })
+  .catch(err => {
+    console.error('Error connecting to PostgreSQL database:', err);
+  });
+  
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
