@@ -3,19 +3,16 @@ import bodyParser from "body-parser";
 import pg from "pg";
 import 'dotenv/config';
 
-
-const db = new pg.Client({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASS,
-  port: process.env.DB_PORT,
+const { Pool } = pg;
+let connString = process.env.DATABASE_URL;
+const db = new Pool({
+  connectionString: connString
 });
 
 db.connect();
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = 3000;
   
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
