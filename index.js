@@ -6,10 +6,19 @@ import 'dotenv/config';
 const { Pool } = pg;
 let connString = process.env.DATABASE_URL;
 const db = new Pool({
-  connectionString: connString
+  connectionString: connString,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
-db.connect();
+db.connect()
+.then(() => {
+  console.log('Connected to the database');
+})
+.catch(err => {
+  console.error('Database connection error:', err.stack);
+});
 
 const app = express();
 const port = process.env.PORT || 3000;
