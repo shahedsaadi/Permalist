@@ -73,6 +73,11 @@ button.add {
   color: #fff;
   font-size: 30px;
   border-width: 0;
+  background-image: none; 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%; 
+  cursor: pointer;
 }
 
 button.edit {
@@ -145,6 +150,16 @@ nav {
 img {
   width: 70px;
   height: 70px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  button.add {
+    background-image: url('../assets/add_plus_icon.png'); 
+    background-color: #E1ACAC;
+     /* Hide the text inside the button */
+    font-size: 0; /* Hide the text */
+  }
 }
 
 
