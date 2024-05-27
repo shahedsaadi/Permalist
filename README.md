@@ -12,18 +12,18 @@ The user can do many things such as add a new item, edit any list items, and eve
 - Express.js.
 - PostgreSQL.
 
+# Visit The Website:
+https://permalist-ps2c.onrender.com
+
 # To Run The Project:
-1- You can visit the link: https://permalist-ps2c.onrender.com
 
-OR
-
-- Create your Database by taking the Schema Definition from queries.sql file.
+- Create your Database you can name it any name, then take the Schema Definition from queries.sql file.
 - Clone the repository, inside the terminal (git clone https://github.com/shahedsaadi/Permalist.git).
 - Run npm install
 
-2- After finishing the previous steps you need to follow the next instructions to complete the steps of running the project locally:
+*-* After finishing the previous steps you need to follow the next instructions to complete the steps of running the project locally:
 
-- Delete this part of the code that is related to the DB connection inside index.js file:
+- Delete this part of the code it is the DB connection inside index.js file:
 
 ```javascript
 const { Pool } = pg;
