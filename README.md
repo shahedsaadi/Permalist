@@ -13,7 +13,7 @@ The user can do many things such as add a new item, edit any list items, and eve
 - PostgreSQL.
 
 # Visit The Website:
-https://permalist-ps2c.onrender.com
+- Click on the link: https://permalist-ps2c.onrender.com
 
 # To Run The Project:
 
